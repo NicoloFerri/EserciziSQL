@@ -1,0 +1,58 @@
+CREATE TABLE INGREDIENT (
+   NAME VARCHAR(255),
+   CONTAINS_LACTOSE BOOLEAN,
+   VEGETARIAN BOOLEAN,
+   VEGAN BOOLEAN,
+   GLUTEN_FREE BOOLEAN
+   );
+   
+INSERT INTO INGREDIENT ( NAME , CONTAINS_LACTOSE,VEGETARIAN,VEGAN,GLUTEN_FREE )
+VALUES
+   ('Pomodoro', false, true, true, true),
+   ('Cipolla', false, true, true, true),
+   ('Peperone', false, true, true, true),
+   ('Pollo', false, false, false, true),
+   ('Riso', false, true, true, true),
+   ('Olive', false, true, true, true),
+   ('Mozzarella', true, false, false, true),
+   ('Funghi', false, true, true, true),
+   ('Spinaci', false, true, true, true),
+   ('Farina di mais', false, true, true, true);
+   
+CREATE TABLE MEAL (
+NAME VARCHAR(255),
+PRICE DOUBLE,
+CALORIES INT,
+DESCRIPRION VARCHAR(255)
+);
+
+
+INSERT INTO MEAL (NAME,PRICE,CALORIES,DESCRIPRION)
+VALUES
+ ('Spaghetti Carbonara', 12.99, 750, 'Classic Italian pasta dish with eggs, cheese, pancetta, and black pepper.'),
+  ('Chicken Caesar Salad', 10.49, 520, 'Fresh romaine lettuce, grilled chicken, croutons, and Caesar dressing.'),
+  ('Grilled Salmon', 15.99, 600, 'Juicy salmon fillet seasoned with herbs and grilled to perfection.'),
+  ('Vegetable Stir-Fry', 9.79, 420, 'Assorted fresh vegetables stir-fried in a savory sauce served with rice.'),
+  ('Cheeseburger', 11.59, 800, 'Juicy beef patty topped with cheese, lettuce, tomato, and pickles.'),
+  ('Margherita Pizza', 13.99, 720, 'Traditional Italian pizza topped with tomato sauce, mozzarella, and basil.'),
+  ('Mushroom Risotto', 7.49, 390, 'Creamy risotto cooked with mushrooms, wine, and parmesan cheese.'),
+  ('BBQ Ribs', 16.29, 820, 'Tender pork ribs smothered in BBQ sauce, served with coleslaw and fries.'),
+  ('Chicken Alfredo', 14.49, 690, 'Grilled chicken served on a bed of fettuccine pasta with creamy Alfredo sauce.'),
+  ('Chocolate Brownie', 6.99, 450, 'Decadent chocolate brownie served with a scoop of vanilla ice cream.');
+  
+  
+SELECT * FROM MEAL WHERE PRICE < 15;
+SELECT * FROM INGREDIENT WHERE VEGETARIAN = true;
+SELECT * FROM MEAL WHERE CALORIES > 500;
+SELECT * FROM MEAL WHERE PRICE BETWEEN 15 AND 16;
+SELECT * FROM INGREDIENT WHERE CONTAINS_LACTOSE = false AND GLUTEN_FREE = true;
+SELECT * FROM MEAL WHERE PRICE < 15 OR CALORIES > 600;
+SELECT * FROM INGREDIENT WHERE VEGAN = true OR GLUTEN_FREE = true;
+SELECT * FROM MEAL WHERE NAME = 'BBQ Ribs';
+SELECT * FROM INGREDIENT WHERE CONTAINS_LACTOSE = true;
+SELECT * FROM MEAL WHERE PRICE > 20 AND CALORIES < 800;
+
+
+
+  
+
